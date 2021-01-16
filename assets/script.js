@@ -1,3 +1,4 @@
+//starter code to test for API
 const settings = {
     "async": true,
     "crossDomain": true,
