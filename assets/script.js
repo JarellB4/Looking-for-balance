@@ -1,7 +1,5 @@
 //starter code to test for API
-
-
-	const settings = {
+const settings = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
@@ -16,7 +14,7 @@ $.ajax(settings).done(function (response) {
 	console.log(response);
 
   var inspiration = $("<p>").text("'" + response.text + "'- " + response.author);
-  // not necessaryinspiration.addId("inspirTag");
+
  $("#header").append(inspiration);
 });
   
