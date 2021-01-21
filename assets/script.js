@@ -15,7 +15,7 @@ $.ajax(settings).done(function (response) {
 
   var inspiration = $("<p>").text("'" + response.text + "'- " + response.author);
 
- $("#header").append(inspiration);
+ $("#apiins").append(inspiration);
 });
   
   
