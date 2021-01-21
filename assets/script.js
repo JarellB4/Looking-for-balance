@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
   $("header").append("<h1> Looking for balance </h1>")
@@ -63,16 +62,3 @@ $(document).ready(function() {
 
 
 
-//starter code to test for API
-const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://type.fit/api/quotes",
-    "method": "GET"
-  }
-  
-  $.ajax(settings).done(function (response) {
-    const data = JSON.parse(response);
-    console.log(data);
-  });
- main
