@@ -1,0 +1,22 @@
+header {
+    width: 100%;
+    height: 200px;
+    background: url('./sunset.png');
+    background-size: cover;
+    color:white;
+    text-align: center;
+    padding: 45px 0;
+    }
+  .btn {
+    margin-left: 20px;
+  }
+  .carousel {
+    margin-top: 20px;
+  }
+  .white-text{
+    text-align: center;
+  }
+  .nav-wrapper {
+      padding-bottom: 100px;
+      height: 200px;
+  }
