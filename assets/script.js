@@ -1,4 +1,4 @@
- Hector
+
 $(document).ready(function() {
 
   $("header").append("<h1> Looking for balance </h1>")
