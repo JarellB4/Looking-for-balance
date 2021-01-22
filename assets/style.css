@@ -20,3 +20,30 @@ header {
     text-align: center;
   }
 
+  textarea{
+    background-color: lightblue;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .description{
+    white-space: pre-wrap;
+  }
+
+  .done {
+    background-color: lightgreen;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+  }
+
+
+ 
+

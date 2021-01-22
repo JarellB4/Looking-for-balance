@@ -58,17 +58,38 @@ $.ajax(settings).done(function (response) {
       var mn = currentDate.getMinutes();
       var sec = currentDate.getSeconds();
       var fullDate = n + (" ") + month + "/" + day + "/" + year;
-      $("#date").text(fullDate);
+      $(".date").text(fullDate);
+
+      toDoList = [sOne, sTwo, sThree, fOne, fTwo, fThree, scOne, scTwo, scThree]
+      
+
+      $(".description").change(function() {
+      var todoVal = $(this).val();
+      var time = $(this).parent().attr("id");
+
+        console.log($(this).val());
+        localStorage.setItem(time, JSON.stringify(todoVal.trim()));  
+
+        
+        
+        for (let i = 0; i < toDoList.length; i++) {
+          localStorage.getItem(toDoList[i],todoVal);  
+        }
+      });
+
+      function checked() {
+        var ckbutton = document.getElementsByClassName("chckBox").checked;
+        if (ckbutton === true) {
+          console.log("button checked worked")
+          $(".chckbox").addClass(".done");
+        }
+        };
 
 
-      var tempHTML = $(`
-      <p>this is a test</p>
-      `);
-      $("#schedule").append("<p>This is where we would append the schedule <p>")
 
-      $("#family").append("<p>This is where we would append the family to do <p>")
 
-      $("#school").append("<p>This is where we would append the school to do <p>")
+
+    
 
 
 
