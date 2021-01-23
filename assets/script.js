@@ -1,4 +1,6 @@
 $(document).ready(function() {
+//delete this line
+
 
 // if (userInput === null || userInput === undefined) 
 
