@@ -1,5 +1,28 @@
 $(document).ready(function() {
 
+
+
+//starter code to test for API
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "4186ebe167msh5543f6c878fb176p17fd99jsn82889e1748ce",
+		"x-rapidapi-host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+
+  var inspiration = $("<p>").text("'" + response.text + "'- " + response.author);
+
+ $("#apiins").append(inspiration);
+});
+
+
   $("header").append("<h1> Looking for balance </h1>")
 
     // Carousel link
@@ -35,17 +58,38 @@ $(document).ready(function() {
       var mn = currentDate.getMinutes();
       var sec = currentDate.getSeconds();
       var fullDate = n + (" ") + month + "/" + day + "/" + year;
-      $("#date").text(fullDate);
+      $(".date").text(fullDate);
+
+      toDoList = [sOne, sTwo, sThree, fOne, fTwo, fThree, scOne, scTwo, scThree]
+      
+
+      $(".description").change(function() {
+      var todoVal = $(this).val();
+      var time = $(this).parent().attr("id");
+
+        console.log($(this).val());
+        localStorage.setItem(time, JSON.stringify(todoVal.trim()));  
+
+        
+        
+        for (let i = 0; i < toDoList.length; i++) {
+          localStorage.getItem(toDoList[i],todoVal);  
+        }
+      });
+
+      function checked() {
+        var ckbutton = document.getElementsByClassName("chckBox").checked;
+        if (ckbutton === true) {
+          console.log("button checked worked")
+          $(".chckbox").addClass(".done");
+        }
+        };
 
 
-      var tempHTML = $(`
-      <p>this is a test</p>
-      `);
-      $("#schedule").append("<p>This is where we would append the schedule <p>")
 
-      $("#family").append("<p>This is where we would append the family to do <p>")
 
-      $("#school").append("<p>This is where we would append the school to do <p>")
+
+    
 
 
       let i = 0;
@@ -75,6 +119,7 @@ $(document).ready(function() {
 
 
 });
+
 
 
 
