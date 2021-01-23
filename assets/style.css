@@ -34,6 +34,30 @@ header {
     text-align: center;
   }
 
+
+  h1 {
+    font-size: 25px;
+    color: blueviolet;
+  }
+  
+  label {
+    font-size: large;
+    color: blueviolet;
+  }
+  button {
+    color: blueviolet;
+
+  }
+  #myProgress {
+    width: 10%;
+    height: 30px;
+    background-color:blueviolet;
+    text-align: center; /* To center it horizontally (if you want)
+    line-height: 30px; /* To center it vertically */
+    color: white;
+  }
+  
+
   textarea{
     background-color: lightblue;
     border: none;
@@ -74,4 +98,5 @@ header {
 
 
  
+
 
