@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+// if (userInput === null || userInput === undefined) 
+
+$("#firstOne .description").val(localStorage.getItem("firstOne"));
 
 
 //starter code to test for API
@@ -17,7 +20,7 @@ const settings = {
 $.ajax(settings).done(function (response) {
 	console.log(response);
 
-  var inspiration = $("<p>").text("'" + response.text + "'- " + response.author);
+  var inspiration = $("<p>").text("Daily Quote: ' "  + response.text + "'- " + response.author);
 
  $("#apiins").append(inspiration);
 });
@@ -60,21 +63,17 @@ $.ajax(settings).done(function (response) {
       var fullDate = n + (" ") + month + "/" + day + "/" + year;
       $(".date").text(fullDate);
 
-      toDoList = [sOne, sTwo, sThree, fOne, fTwo, fThree, scOne, scTwo, scThree]
-      
 
-      $(".description").change(function() {
-      var todoVal = $(this).val();
-      var time = $(this).parent().attr("id");
+     
 
-        console.log($(this).val());
-        localStorage.setItem(time, JSON.stringify(todoVal.trim()));  
-
-        
-        
-        for (let i = 0; i < toDoList.length; i++) {
-          localStorage.getItem(toDoList[i],todoVal);  
-        }
+      $(".description").change(function(evt) {
+       var userInput = evt.currentTarget;
+       console.log(userInput);
+       var value = $(userInput).val().trim();
+       var key = $(userInput).attr("id");
+       console.log(key);
+       localStorage.setItem(key, JSON.stringify(value));  
+       
       });
 
       function checked() {
@@ -85,8 +84,47 @@ $.ajax(settings).done(function (response) {
         }
         };
 
+        // Progress bar
+      //   let i = 0;
+      // function move() {
+      //   if (i == 0) {
+      //     i = 1;
+      //     var elem = document.getElementById("myBar");
+      //     var width = 1;
+      //     var full = setInterval(frame, 10);
+      //     function frame() {
+      //       if (width >= 100) {
+      //         clearInterval(full);
+      //         i = 0;
+      //       } else {
+      //         width++;
+      //         elem.style.width = width + "%";
+      //       }
+      //     }
+      //   }
+      // }
+
+      
+
+      
 
 
+      const setting = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://dad-jokes.p.rapidapi.com/random/joke",
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-key": "4186ebe167msh5543f6c878fb176p17fd99jsn82889e1748ce",
+          "x-rapidapi-host": "dad-jokes.p.rapidapi.com"
+        }
+      };
+      $.ajax(setting).done(function (response) {
+        console.log(response);
+        var dadJokeSetUp = $("<p>").text(response.body[0].setup);
+        var dadJokePunchLine =$("<p>").text(response.body[0].punchline);
+       $("#dadapi").append(dadJokeSetUp, dadJokePunchLine);
+      });
 
 
     
@@ -110,6 +148,7 @@ $.ajax(settings).done(function (response) {
           }
         }
       }
+
 
 
 
