@@ -48,7 +48,24 @@ $(document).ready(function() {
       $("#school").append("<p>This is where we would append the school to do <p>")
 
 
-
+      let i = 0;
+      function move() {
+        if (i == 0) {
+          i = 1;
+          var elem = document.getElementById("myBar");
+          var width = 1;
+          var full = setInterval(frame, 10);
+          function frame() {
+            if (width >= 100) {
+              clearInterval(full);
+              i = 0;
+            } else {
+              width++;
+              elem.style.width = width + "%";
+            }
+          }
+        }
+      }
 
 
 
