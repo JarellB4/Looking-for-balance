@@ -2,7 +2,14 @@ $(document).ready(function() {
 
 // if (userInput === null || userInput === undefined) 
 
-$("#firstOne .description").val(localStorage.getItem("firstOne"));
+//$("#firstOne .description").val(localStorage.getItem("firstOne"));
+//var value = $(userInput).val().trim();
+    //   var key = $(userInput).attr("id");
+      
+	 //  var get = localstorage.getItem(key, JSON.stringify(value));  
+	   //$(".description").innerHTML(get); 
+	   //console.log(key);
+
 
 
 //starter code to test for API
